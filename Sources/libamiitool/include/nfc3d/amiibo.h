@@ -1,3 +1,10 @@
+/*
+ * (c) 2015-2017 Marcos Del Sol Vives
+ * (c) 2016      javiMaD
+ *
+ * SPDX-License-Identifier: MIT
+ */
+
 #ifndef HAVE_NFC3D_AMIIBO_H
 #define HAVE_NFC3D_AMIIBO_H
 

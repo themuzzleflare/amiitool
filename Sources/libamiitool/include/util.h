@@ -1,3 +1,10 @@
+/*
+ * (c) 2015-2017 Marcos Del Sol Vives
+ * (c) 2016      javiMaD
+ *
+ * SPDX-License-Identifier: MIT
+ */
+
 #ifndef HAVE_UTIL_H
 #define HAVE_UTIL_H
 
