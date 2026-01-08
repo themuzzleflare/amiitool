@@ -1,4 +1,4 @@
-// swift-tools-version:6.2
+// swift-tools-version:5.0
 // The swift-tools-version declares the minimum version of Swift required to build this package.
 
 import PackageDescription
@@ -9,7 +9,7 @@ let package = Package(
         // Products define the executables and libraries a package produces, and make them visible to other packages.
         .library(
             name: "libamiitool",
-            targets: ["libamiitool"]
+            targets: ["libamiitool"],
         ),
         .executable(
             name: "amiitool",
@@ -22,17 +22,22 @@ let package = Package(
         .target(
             name: "mbedtls",
             cSettings: [
-                .define("MBEDTLS_CONFIG_FILE", to: "\"configs/mbedtls.h\""),
-                .unsafeFlags(["-Wall", "-pedantic", "-O2", "-fsigned-char"])
+                .unsafeFlags(["-DMBEDTLS_CONFIG_FILE=\"configs/mbedtls.h\"", "-Wall", "-pedantic", "-O2", "-fsigned-char"])
             ]
         ),
         .target(
             name: "libamiitool",
-            dependencies: ["mbedtls"]
+            dependencies: ["mbedtls"],
+            cSettings: [
+                .unsafeFlags(["-Wall", "-pedantic", "-O2", "-fsigned-char"])
+            ]
         ),
-        .executableTarget(
+        .target(
             name: "amiitool",
-            dependencies: ["libamiitool"]
+            dependencies: ["libamiitool"],
+            cSettings: [
+                .unsafeFlags(["-Wall", "-pedantic", "-O2", "-fsigned-char"])
+            ]
         )
     ]
 )
